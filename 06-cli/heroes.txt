@@ -1,0 +1,1 @@
+[{"id":"7f6d299a-f306-4f9d-833f-1945087318aa","name":"Batman","power":"Money"}]

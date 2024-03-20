@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "06-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter progress"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.3.0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
