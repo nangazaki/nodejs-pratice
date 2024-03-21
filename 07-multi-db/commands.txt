@@ -1,0 +1,17 @@
+# Create postgres image
+docker run --name postgres -e POSTGRES_USER=nangazaki  -e POSTGRES_PASSWORD=root -e POSTGRES_DB=heroes -p 5432:5432 -d postgres
+
+# Create Adminer to manage the postgres databases
+docker run --name adminer -p 8080:8080 --link postgres:postgres -d adminer 
+
+# Create mongodb image
+docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=nangazaki -e MONGO_INITDB_ROOT_PASSWORD=root mongo
+
+#Cretae Mongoclient to manage the mongodb databases
+docker run - name mongodb-p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=nangazaki -e MONGO_INITDB_ROOT_PASSWORD=root mongo
+
+# Create a new user in mongodb
+docker exec -it mongodb \
+    mongosh --host localhost -u nangazaki -p root --authenticationDatabase admin \
+    --eval "db.getSiblingDB('heroes').createUser({user: 'nangazaki', pwd: 'root', \
+      roles: [{role: 'readWrite', db: 'heroes'}]})" 
